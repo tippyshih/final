@@ -1,18 +1,18 @@
-<%@page contentType="text/html"%>
+<%@ page language="java" contentType="text/html; charset=BIG5" pageEncoding="BIG5"%>
 <%@page pageEncoding="BIG5"%>
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='finalproject.DBConfig' />
 <%
-if(request.getParameter("memberId") !=null &&
-	request.getParameter("memberPwd") !=null){
+if(request.getParameter("playerid") !=null &&
+	request.getParameter("playpwd") !=null){
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String getpaperdata = "SELECT * FROM leelab WHERE memberId='"+
-			request.getParameter("memberId")+"' AND memberPwd='" +
-			request.getParameter("memberPwd")+"'";
+	String getpaperdata = "SELECT * FROM playerlist WHERE playerid='"+
+			request.getParameter("playerid")+"' AND playpwd='" +
+			request.getParameter("playpwd")+"'";
 	ResultSet paperrs = smt.executeQuery(getpaperdata);
 	if(paperrs.next()){
-		session.setAttribute("accessId",request.getParameter("memberId"));
+		session.setAttribute("accessId",request.getParameter("playerid"));
 		//session.setMaxInactiveInterval(20); ¦Û°Êµn¥X
 		response.sendRedirect("index.jsp");
 	}else
