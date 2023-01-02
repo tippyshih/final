@@ -1,30 +1,9 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="BIG5"%>
-<%@page import="java.sql.*"%>
-<jsp:useBean id='objDBConfig' scope='session' class='histd.tool.group.database.DBConfig' />
-<%
-session.setAttribute("access","n");
-if(request.getParameter("playerid") !=null &&
-	request.getParameter("playpwd") !=null){
-Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
-	Statement smt= con.createStatement
-			(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-	String getpaperdata = "SELECT * FROM playerlist WHERE playerid='"+
-			request.getParameter("playerid")+"' AND playpwd='" +
-			request.getParameter("playpwd")+"'";
-				ResultSet paperrs = smt.executeQuery(getpaperdata);
-	if(paperrs.next()){
-		session.setAttribute("access","y");
-		session.setAttribute("accessid",request.getParameter("playerid"));
-			session.setMaxInactiveInterval(5);
-		response.sendRedirect("accessPage.jsp");
-	}else
-		out.println("±b∏π±KΩX§£≤≈°IΩ–≠´∑sµn§J");
-}
-%>
+<!DOCTYPE html>
+
 <html>
-<head><title>µn§J≠∂≠±</title></head>
+<head>
+<title>ÁôªÂÖ•È†ÅÈù¢</title>
+</head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -91,19 +70,18 @@ span.psw {
 </style>
 <body>
 <h2>Login Form</h2>
-<form method="post">
+<form action="logina.jsp" method="post">
 <div class="container">
 	<label for="memberid"><b>MemberID</b></label>
     <input type="text" placeholder="Enter Username" name="playid" required>
-	<% if(request.getParameter("playerid")!= null){ %>
-		value = '<%=request.getParameter("playerid") %>'
-		
-	<%}%>
+	if(request.getParameter("playerid")!= null){ 
+		value = '=request.getParameter("playerid") '
+		%}
     <label for="memberpwd"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="playerpwd" required>
-    <% if(request.getParameter("playerpwd")!= null){ %>
-		value = '<%=request.getParameter("playerpwd") %>'
-	<%}%>
+    if(request.getParameter("playerpwd")!= null){
+		value = '=request.getParameter("playerpwd") '
+	}
     <button type="submit" name="loginButton">Login</button>
 </div>
 <div class="container" style="background-color:#f1f1f1">
