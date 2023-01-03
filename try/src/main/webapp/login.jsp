@@ -62,8 +62,6 @@ Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.File
 					<%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
 						if(request.getParameter("status").equals("loginerror")){ %>
 						<p><font color="red">帳號或密碼錯誤，請重新輸入!</font></p>
-					<%}else if(request.getParameter("status").equals("newmember")){%>
-						<p><font color="blue">成功加入會員!請使用您的帳密登入</font></p>
 					<%}
 					}%>					
 				</span> 
