@@ -2,9 +2,7 @@
 <%@page pageEncoding="BIG5"%>
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='histd.tool.group.database.DBConfig' />
-<html>
-<body>
-	<%
+<%
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
@@ -15,7 +13,15 @@
 	//sql="INSERT INTO member VALUES('"+memberid+"','"+memberpwd+"')";
 	smt.execute("INSERT INTO playerlist (playerid, playpwd,namepos) VALUES('"+memberid+"','"+memberpwd+"','"+memberpos+"')");
 	con.close();
-	response.sendRedirect("logina.jsp");
+	response.sendRedirect("login.jsp");
 	%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<title>Insert title here</title>
+</head>
+<body>
+
 </body>
 </html>

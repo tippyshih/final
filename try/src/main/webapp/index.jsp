@@ -1,12 +1,163 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@page contentType="text/html"%>
+<%@page pageEncoding="utf-8"%>
+<%@page import="java.sql.*"%>
+<jsp:useBean id='objDBConfig' scope='session' class='histd.tool.group.database.DBConfig' />
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="BIG5">
-<title>Insert title here</title>
-</head>
-<body>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PAGE settings -->
+  <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+  <title>玩伴平台</title>
+  <meta name="description" content="Wireframe design of a landing page by Pingendo">
+  <meta name="keywords" content="Pingendo bootstrap example template wireframe landing">
+  <meta name="author" content="Pingendo">
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+
+<body class="">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <a class="navbar-brand" href="#">
+        <i class="fa d-inline fa-lg fa-stop-circle"></i>
+        <b> 玩伴平台</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="index.jsp">HOME</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="login.jsp">Login</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="signup.jsp">SignUP</a> </li>
+        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy us.jsp">Contact us</a>
+      </div>
+    </div>
+  </nav>
+  <div class="h-50 d-flex align-items-center bg-info" style="	background-image: url(&quot;img/children.jpg&quot;);	background-position: center;	background-size: 50%;	background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-light text-uppercase text-left">遊戲玩伴平台</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel slide" data-ride="carousel" id="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"> <img class="d-block img-fluid w-100" src="img\LOL.jpg">
+              </div>
+              <div class="carousel-item "> <img class="d-block img-fluid w-100" src="img\PUBG.jpg">
+                <div class="carousel-caption">
+                  <h5 class="m-0">Carousel</h5>
+                  <p>with controls</p>
+                </div>
+              </div>
+              <div class="carousel-item"> <img class="d-block img-fluid w-100" src="img\genshin.jpg">
+                <div class="carousel-caption">
+                  <h5 class="m-0">Carousel</h5>
+                  <p>with controls</p>
+                </div>
+              </div>
+            </div> <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel" role="button" data-slide="next"> <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel slide" data-ride="carousel" id="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"> <img class="d-block img-fluid w-100" src="img\LOL.jpg">
+              </div>
+              <div class="carousel-item "> <img class="d-block img-fluid w-100" src="img\PUBG.jpg">
+                <div class="carousel-caption">
+                  <h5 class="m-0">Carousel</h5>
+                  <p>with controls</p>
+                </div>
+              </div>
+              <div class="carousel-item"> <img class="d-block img-fluid w-100" src="img\genshin.jpg">
+                <div class="carousel-caption">
+                  <h5 class="m-0">Carousel</h5>
+                  <p>with controls</p>
+                </div>
+              </div>
+            </div> <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel" role="button" data-slide="next"> <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 p-3">
+          <div class="card">
+            <div class="card-body p-4 h-50"> <img class="img-fluid d-block mb-3 mx-auto w-50 rounded h-50" src="img\computergame.jpg" width="150" height="150">
+              <h1 class="h-50 text-center">ALL COMPUTER<br>GAMES</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 p-3 col-md-6">
+          <div class="card">
+            <div class="card-body p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle w-75 h-25" src="img/moblegame.jpg" width="150">
+              <h1>ALL&nbsp;<br>MOBLE<br>GAMES<br></h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 p-3 col-md-6">
+          <div class="card">
+            <div class="card-body p-4"><a href="GROUP.html"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle h-25 w-75" src="img/group.jpg" width="150" height="150
+150"></a>
+              <h1>AII<br>GROUPS&amp;<br>FRIENDS</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center"> <i class="d-block fa fa-stop-circle mb-3 text-muted fa-3x"></i>
+          <p> <a href="https://goo.gl/maps/AUq7b9W7yYJ2" target="_blank"> Fake street, 100 <br>NYC - 20179, USA</a> </p>
+          <p> <a href="tel:+246 - 542 550 5462">+1 - 256 845 87 86</a> </p>
+          <p class="mb-0"> <a href="mailto:info@pingendo.com">info@pingendo.com</a> </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 d-flex align-items-center justify-content-center my-3"> <a href="#">
+            <i class="d-block fa fa-facebook-official text-muted fa-lg mr-2"></i>
+          </a> <a href="#">
+            <i class="d-block fa fa-instagram text-muted fa-lg mx-2"></i>
+          </a> <a href="#">
+            <i class="d-block fa fa-google-plus-official text-muted fa-lg mx-2"></i>
+          </a> <a href="#">
+            <i class="d-block fa fa-pinterest-p text-muted fa-lg mx-2"></i>
+          </a> <a href="#">
+            <i class="d-block fa fa-reddit text-muted fa-lg mx-2"></i>
+          </a> <a href="#">
+            <i class="d-block fa fa-twitter text-muted fa-lg ml-2"></i>
+          </a> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2014-2018 Pingendo. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
+
 </html>

@@ -23,6 +23,27 @@ Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.File
 		out.println("帳號密碼不符！請重新登入");
 }
 %>
+<%
+session.setAttribute("access","n");
+if(request.getParameter("playerid") !=null &&
+	request.getParameter("playpwd") !=null){
+Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt= con.createStatement
+			(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+	String getpaperdata = "SELECT * FROM playerlist WHERE playerid='"+
+			request.getParameter("playerid")+"' AND playpwd='" +
+			request.getParameter("playerpwd")+"'";
+				ResultSet paperrs = smt.executeQuery(getpaperdata);
+	if(paperrs.next()){
+		session.setAttribute("access","y");
+		session.setAttribute("accessid",request.getParameter("playerid"));
+			//session.setMaxInactiveInterval(5);
+		response.sendRedirect("member data.html");
+	}else
+		out.println("帳號密碼不符！請重新登入");
+}
+%>
 <html>
 <head><title>登入頁面</title></head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,5 +132,17 @@ span.psw {
     
   </div>
 </form>
+              <div class="form-group" style=""><label for="form16">個人標籤2</label><select class="custom-select">
+                  <option selected="" value="Open this select menu">Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <div class="form-group"><label>個人標籤3</label><select class="custom-select">
+                    <option selected="" value="Open this select menu">Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
 </body>
 </html>
