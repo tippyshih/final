@@ -12,14 +12,14 @@ Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.File
 			(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 	String getpaperdata = "SELECT * FROM playerlist WHERE playerid='"+
 			request.getParameter("playerid")+"' AND playpwd='" +
-			request.getParameter("playerpwd")+"'";
+			request.getParameter("playpwd")+"'";
 				ResultSet paperrs = smt.executeQuery(getpaperdata);
 	if(paperrs.next()){
 		session.setAttribute("access","y");
 		session.setAttribute("accessid",request.getParameter("playerid"));
 			session.setMaxInactiveInterval(5);
-				response.sendRedirect("index.html");
+				response.sendRedirect("memberDataself.jsp");
 			}else
-				response.sendRedirect("login.html?status=loginerror");
+				response.sendRedirect("login.jsp");
 		}
 %>
