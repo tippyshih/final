@@ -38,7 +38,7 @@
           <li class="nav-item"> <a class="nav-link" href="index.jsp"><b>HOME</b></a> </li>
           <li class="nav-item"> <a class="nav-link" href="login.jsp"><b>Login</b></a> </li>
           <li class="nav-item"> <a class="nav-link" href="signup.jsp"><b>SignUP</b></a> </li>
-        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy us.jsp"><b>Contact us</b></a>
+        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy.jsp">Contact us</a>
       </div>
     </div>
   </nav>
@@ -69,10 +69,10 @@
                 <div class="col-md-12">
                   <div class="list-group">
                   <ul>
-                    <li  class="list-group-item list-group-item-action"><% out.println("(" + session.getAttribute("accessid") +"   "+ "您好!" + ")");%></li>
-                    <li  class="list-group-item list-group-item-action">GAME1 </li>
-                    <li  class="list-group-item list-group-item-action" >GAME2</li>
-                    <li  class="list-group-item list-group-item-action">GAME3</li>
+                    <li  class="list-group-item list-group-item-action"><% out.println( session.getAttribute("accessid") );%></li>
+                    <li  class="list-group-item list-group-item-action"><%=rs.getString("game1") %></li>
+                    <li  class="list-group-item list-group-item-action"><%=rs.getString("game2") %></li>
+                    <li  class="list-group-item list-group-item-action"><%=rs.getString("game3") %></li>
                     </ul>
                   </div>
                 </div>

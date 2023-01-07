@@ -33,7 +33,7 @@
           <li class="nav-item"> <a class="nav-link" href="index.jsp">HOME</a> </li>
           <li class="nav-item"> <a class="nav-link" href="login.jsp">Login</a> </li>
           <li class="nav-item"> <a class="nav-link" href="signup.jsp">SignUP</a> </li>
-        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy us.jsp">Contact us</a>
+        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy.jsp">Contact us</a>
       </div>
     </div>
   </nav>
@@ -111,13 +111,13 @@
         <div class="col-lg-4 p-3 col-md-6">
           <div class="card">
             <div class="card-body p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle w-75 h-25" src="img/moblegame.jpg" width="150">
-              <h1>ALL&nbsp;<br>MOBLE<br>GAMES<br></h1>
+              <h1>ALL&nbsp;<br>MOBILE<br>GAMES<br></h1>
             </div>
           </div>
         </div>
         <div class="col-lg-4 p-3 col-md-6">
           <div class="card">
-            <div class="card-body p-4"><a href="GROUP.html"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle h-25 w-75" src="img/group.jpg" width="150" height="150
+            <div class="card-body p-4"><a href="group.jsp"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle h-25 w-75" src="img/group.jpg" width="150" height="150
 150"></a>
               <h1>AII<br>GROUPS&amp;<br>FRIENDS</h1>
             </div>
@@ -157,7 +157,6 @@
       </div>
     </div>
   </div>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
 
 </html>

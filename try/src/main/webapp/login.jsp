@@ -15,19 +15,19 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container"> <a class="navbar-brand" href="#">
         <i class="fa d-inline fa-lg fa-stop-circle"></i>
-        <b contenteditable="true"> 陪玩平台</b>
-      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
+        <b> 玩伴平台</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar10">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"> <a class="nav-link" href="index.html"><b>HOME</b></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="login.html"><b>Login</b></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="signup.html"><b>SignUP</b></a> </li>
-        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy us.html"><b>Contact us</b></a>
+          <li class="nav-item"> <a class="nav-link" href="index.jsp">HOME</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="login.jsp">Login</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="signup.jsp">SignUP</a> </li>
+        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy.jsp">Contact us</a>
       </div>
     </div>
   </nav>
