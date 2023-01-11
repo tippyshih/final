@@ -1,6 +1,4 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="utf-8"%>
-<%@page import="java.sql.*"%>
+<%@page contentType="text/html" pageEncoding="utf-8" import="java.sql.*"  %>
 <%@include file = "menu.jsp" %>
 <jsp:useBean id='objDBConfig' scope='session' class='histd.tool.group.database.DBConfig' />
 
@@ -8,7 +6,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="BIG5">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
@@ -64,75 +62,75 @@
                   <div class="form-group"><label>GAME1</label>
                   <select class="custom-select" name="game1" id="game1">
                       <option selected="" value="Open this select menu">Open this select menu</option>
-                      <option value="1">APEX 英雄</option>
-                      <option value="2">魔獸世界</option>
-                      <option value="3">BanG Dream！少女樂團派對</option>
-                      <option value="4">Candy Crash</option>
-                      <option value="5">Garena 傳說對決</option>
-                      <option value="6">LINE: Disney Tsum Tsum</option>
-                      <option value="7">Roblox 機器磚塊</option>
-                      <option value="8">原神</option>
-                      <option value="9">怪物彈珠</option>
-                      <option value="10">新楓之谷</option>
-                      <option value="11">特戰英豪</option>
-                      <option value="12">當個創世神</option>
-                      <option value="13">神魔之塔</option>
-                      <option value="14">第五人格</option>
-                      <option value="15">絕地求生</option>
-                      <option value="16">英雄聯盟</option>
-                      <option value="17">荒野亂鬥</option>
-                      <option value="18">跑跑卡丁車</option>
-                      <option value="19">雀魂麻將</option>
-                      <option value="20">風之國度</option>
-                      <option value="21">鬥陣特攻2</option>
+                      <option value="APEX 英雄">APEX 英雄</option>
+                      <option value="魔獸世界">魔獸世界</option>
+                      <option value="BanG Dream！少女樂團派對">BanG Dream！少女樂團派對</option>
+                      <option value="Candy Crash">Candy Crash</option>
+                      <option value="Garena 傳說對決">Garena 傳說對決</option>
+                      <option value="LINE: Disney Tsum Tsum">LINE: Disney Tsum Tsum</option>
+                      <option value="Roblox 機器磚塊">Roblox 機器磚塊</option>
+                      <option value="原神">原神</option>
+                      <option value="怪物彈珠">怪物彈珠</option>
+                      <option value="新楓之谷">新楓之谷</option>
+                      <option value="特戰英豪">特戰英豪</option>
+                      <option value="當個創世神">當個創世神</option>
+                      <option value="神魔之塔">神魔之塔</option>
+                      <option value="第五人格">第五人格</option>
+                      <option value="絕地求生">絕地求生</option>
+                      <option value="英雄聯盟">英雄聯盟</option>
+                      <option value="荒野亂鬥">荒野亂鬥</option>
+                      <option value="跑跑卡丁車">跑跑卡丁車</option>
+                      <option value="雀魂麻將">雀魂麻將</option>
+                      <option value="風之國度">風之國度</option>
+                      <option value="鬥陣特攻2">鬥陣特攻2</option>
                     </select>
                     <div class="form-group"><label>GAME2</label>
                     <select class="custom-select" name="game2" id="game2">
-                      <option value="1">APEX 英雄</option>
-                      <option value="2">魔獸世界</option>
-                      <option value="3">BanG Dream！少女樂團派對</option>
-                      <option value="4">Candy Crash</option>
-                      <option value="5">Garena 傳說對決</option>
-                      <option value="6">LINE: Disney Tsum Tsum</option>
-                      <option value="7">Roblox 機器磚塊</option>
-                      <option value="8">原神</option>
-                      <option value="9">怪物彈珠</option>
-                      <option value="10">新楓之谷</option>
-                      <option value="11">特戰英豪</option>
-                      <option value="12">當個創世神</option>
-                      <option value="13">神魔之塔</option>
-                      <option value="14">第五人格</option>
-                      <option value="15">絕地求生</option>
-                      <option value="16">英雄聯盟</option>
-                      <option value="17">荒野亂鬥</option>
-                      <option value="18">跑跑卡丁車</option>
-                      <option value="19">雀魂麻將</option>
-                      <option value="20">風之國度</option>
-                      <option value="21">鬥陣特攻2</option>
+                      <option value="APEX 英雄">APEX 英雄</option>
+                      <option value="魔獸世界">魔獸世界</option>
+                      <option value="BanG Dream！少女樂團派對">BanG Dream！少女樂團派對</option>
+                      <option value="Candy Crash">Candy Crash</option>
+                      <option value="Garena 傳說對決">Garena 傳說對決</option>
+                      <option value="LINE: Disney Tsum Tsum">LINE: Disney Tsum Tsum</option>
+                      <option value="Roblox 機器磚塊">Roblox 機器磚塊</option>
+                      <option value="原神">原神</option>
+                      <option value="怪物彈珠">怪物彈珠</option>
+                      <option value="新楓之谷">新楓之谷</option>
+                      <option value="特戰英豪">特戰英豪</option>
+                      <option value="當個創世神">當個創世神</option>
+                      <option value="神魔之塔">神魔之塔</option>
+                      <option value="第五人格">第五人格</option>
+                      <option value="絕地求生">絕地求生</option>
+                      <option value="英雄聯盟">英雄聯盟</option>
+                      <option value="荒野亂鬥">荒野亂鬥</option>
+                      <option value="跑跑卡丁車">跑跑卡丁車</option>
+                      <option value="雀魂麻將">雀魂麻將</option>
+                      <option value="風之國度">風之國度</option>
+                      <option value="鬥陣特攻2">鬥陣特攻2</option>
                       </select>
                       <div class="form-group"><label>GAME3</label>
                       <select class="custom-select" name="game3" id="game3">
-                      <option value="1">APEX 英雄</option>
-                      <option value="2">魔獸世界</option>
-                      <option value="3">BanG Dream！少女樂團派對</option>
-                      <option value="4">Candy Crash</option>
-                      <option value="5">Garena 傳說對決</option>
-                      <option value="6">LINE: Disney Tsum Tsum</option>
-                      <option value="7">Roblox 機器磚塊</option>
-                      <option value="8">原神</option>
-                      <option value="9">怪物彈珠</option>
-                      <option value="10">新楓之谷</option>
-                      <option value="11">特戰英豪</option>
-                      <option value="12">當個創世神</option>
-                      <option value="13">神魔之塔</option>
-                      <option value="14">第五人格</option>
-                      <option value="15">絕地求生</option>
-                      <option value="16">英雄聯盟</option>
-                      <option value="17">荒野亂鬥</option>
-                      <option value="18">跑跑卡丁車</option>
-                      <option value="19">雀魂麻將</option>
-                      <option value="20">風之國度</option>
-                      <option value="21">鬥陣特攻2</option>
+                       <option value="APEX 英雄">APEX 英雄</option>
+                      <option value="魔獸世界">魔獸世界</option>
+                      <option value="BanG Dream！少女樂團派對">BanG Dream！少女樂團派對</option>
+                      <option value="Candy Crash">Candy Crash</option>
+                      <option value="Garena 傳說對決">Garena 傳說對決</option>
+                      <option value="LINE: Disney Tsum Tsum">LINE: Disney Tsum Tsum</option>
+                      <option value="Roblox 機器磚塊">Roblox 機器磚塊</option>
+                      <option value="原神">原神</option>
+                      <option value="怪物彈珠">怪物彈珠</option>
+                      <option value="新楓之谷">新楓之谷</option>
+                      <option value="特戰英豪">特戰英豪</option>
+                      <option value="當個創世神">當個創世神</option>
+                      <option value="神魔之塔">神魔之塔</option>
+                      <option value="第五人格">第五人格</option>
+                      <option value="絕地求生">絕地求生</option>
+                      <option value="英雄聯盟">英雄聯盟</option>
+                      <option value="荒野亂鬥">荒野亂鬥</option>
+                      <option value="跑跑卡丁車">跑跑卡丁車</option>
+                      <option value="雀魂麻將">雀魂麻將</option>
+                      <option value="風之國度">風之國度</option>
+                      <option value="鬥陣特攻2">鬥陣特攻2</option>
                         </select>
                         <div class="row">
                           <div class="col-md-12">

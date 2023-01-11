@@ -20,7 +20,7 @@
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
 	String playerid = new String(request.getParameter("playerid"));
-	String playpwd = new String(request.getParameter("palypwd"));
+	String playpwd = new String(request.getParameter("playpwd"));
 	String namepos = new String(request.getParameter("namepos"));
 	String game1 = new String(request.getParameter("game1"));
 	String game2 = new String(request.getParameter("game2"));
@@ -30,6 +30,6 @@
 		con.close();
 		response.sendRedirect("login.jsp");
 	}catch (Exception e){
-		response.sendRedirect("signup.jsp?status=IDexist");
+		response.sendRedirect("signup.jsp");
 	}	
 	%>

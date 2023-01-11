@@ -1,17 +1,17 @@
 <%@page contentType="text/html"%>
-<%@page pageEncoding="utf-8"%>
+<%@page pageEncoding="BIG5"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>çŽ©ä¼´å¹³å°</title>
+<title>ª±¦ñ¥­¥x</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container"> <a class="navbar-brand" href="#">
         <i class="fa d-inline fa-lg fa-stop-circle"></i>
-        <b> çŽ©ä¼´å¹³å°</b>
+        <b> ª±¦ñ¥­¥x</b>
       </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
         <span class="navbar-toggler-icon"></span>
       </button>
