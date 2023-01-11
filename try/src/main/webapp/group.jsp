@@ -1,10 +1,21 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="utf-8"%>
 <%@page import="java.sql.*"%>
+<%@include file = "menu.jsp" %>
 <jsp:useBean id='objDBConfig' scope='session' class='histd.tool.group.database.DBConfig' />
 
 <!DOCTYPE html>
 <html>
+	<%	
+	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt= con.createStatement();
+	String sql = "SELECT Group.公會名稱, playerlist.playerid FROM [Group] INNER JOIN playerlist ON Group.公會名稱 = playerlist.group";
+	ResultSet rs = smt.executeQuery(sql);
+	String group = request.getParameter("group");
+	String playerid = request.getParameter("playerid");
+	rs.next();
+	%>
 
 <head>
   <meta charset="utf-8">
@@ -14,34 +25,21 @@
 </head>
 
 <body>
- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container"> <a class="navbar-brand" href="#">
-        <i class="fa d-inline fa-lg fa-stop-circle"></i>
-        <b> 玩伴平台</b>
-      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar10">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"> <a class="nav-link" href="index.jsp">HOME</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="login.jsp">Login</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="signup.jsp">SignUP</a> </li>
-        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy.jsp">Contact us</a>
-     </div>
-    </div>
-  </nav>
   <nav class="navbar navbar-expand-md navbar-light">
-    <div class="container justify-content-center"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar3">
+    <div class="container justify-content-center"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar3" style="">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3">
         <ul class="navbar-nav">
-          <li class="nav-item mx-2"> <a class="nav-link" href="#">公告</a> </li>
-          <li class="nav-item mx-2"> <a class="nav-link" href="#">手遊</a> </li>
-          <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-primary" href="#">
+          <li class="nav-item mx-2"> <a class="nav-link" href="memberDataself.jsp">
+              <font size="5">個人頁面</font>
+            </a></li>
+          <li class="nav-item mx-2"> <a class="nav-link" href="friend.jsp">
+              <font size="5">好友列表</font>
             </a> </li>
-          <li class="nav-item mx-2" style=""> <a class="nav-link" href="#">公會</a> </li>
-          <li class="nav-item mx-2"> <a class="nav-link" href="#">社團</a> </li>
+          <li class="nav-item mx-2"> <a class="nav-link" href="message.jsp">
+              <font size="5">傳送訊息</font>
+            </a></li>
         </ul>
       </div>
     </div>
@@ -52,10 +50,21 @@
         <div class="col-md-6" style="">
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action active"> 成員</a>
-            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a><a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a><a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a><a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a><a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a><a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a><a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a><a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a><a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a><a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a><a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a><a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+            <a href="#" class="list-group-item list-group-item-action disabled"><% out.println( session.getAttribute("accessid") );%></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
+            <a href="#" class="list-group-item list-group-item-action"><%=rs.getString("playerid") %></a>
           </div>
         </div>
         <div class="col-md-6">
@@ -96,7 +105,7 @@
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="py-3">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -105,30 +114,29 @@
       </div>
     </div>
   </div>
-  <div class="py-5">
-    <div class="container">
+  <div class="">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-1.svg"> </div>
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-2.svg"> </div>
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-4.svg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/APEX.jpg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/Boblox.jpg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/LOL.jpg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/WoW.jpg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/valorant.jpg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/tsum.jpg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/PUBG.jpg"> </div>
+        <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="img/overwatch2.jpg"> </div>
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="py-3">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-1.svg"> </div>
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-2.svg"> </div>
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
-        <div class="col-md-3 col-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-4.svg"> </div>
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2014-2018 Pingendo. All rights reserved</p>
+        </div>
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
 
 </html>

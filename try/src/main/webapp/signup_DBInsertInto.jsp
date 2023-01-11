@@ -30,6 +30,6 @@
 		con.close();
 		response.sendRedirect("login.jsp");
 	}catch (Exception e){
-		response.sendRedirect("signUp.jsp?status=IDexist");
+		response.sendRedirect("signup.jsp?status=IDexist");
 	}	
 	%>

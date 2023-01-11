@@ -1,6 +1,7 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="utf-8"%>
 <%@page import="java.sql.*"%>
+<%@include file = "menu.jsp" %>
 <jsp:useBean id='objDBConfig' scope='session' class='histd.tool.group.database.DBConfig' />
 
 <!DOCTYPE html>
@@ -14,22 +15,6 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container"> <a class="navbar-brand" href="#">
-        <i class="fa d-inline fa-lg fa-stop-circle"></i>
-        <b> 玩伴平台</b>
-      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar10">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"> <a class="nav-link" href="index.jsp">HOME</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="login.jsp">Login</a></li>
-          <li class="nav-item"> <a class="nav-link" href="signup.jsp">SingUP</a> </li>
-        </ul> <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="contacy.jsp">Contact us</a>
-      </div>
-    </div>
-  </nav>
   <div class="">
     <div class="container">
       <div class="row">
@@ -55,13 +40,14 @@
                 <h3 contenteditable="true">輸入你的帳號名稱</h3>
               </div>
             </div>
-            <div class="form-group"> <label for="form17">Your account</label> <input type="text" class="form-control" id="playerid" placeholder="Werther Inc."> </div>
+            <div class="form-group"> <label for="form17">Your account</label> 
+            <input type="text" class="form-control" id="playerid" placeholder="Werther Inc." name="playerid"> </div>
             <div class="col-10 col-md-12">
               <div class="col-md-12">
                 <h3 class="">選擇個人特色</h3>
               </div><label for="form18">個人標籤</label>
               <div class="row">
-              </div><select class="custom-select">
+              </div><select class="custom-select" name="namepos" id="namepos">
                 <option selected="" value="Open this select menu">Open this select menu</option>
                 <option value="1">可愛</option>
                 <option value="2">大神</option>
@@ -75,23 +61,78 @@
                       <h3 class="">選擇常玩的遊戲</h3>
                     </div>
                   </div>
-                  <div class="form-group"><label>GAME1</label><select class="custom-select">
+                  <div class="form-group"><label>GAME1</label>
+                  <select class="custom-select" name="game1" id="game1">
                       <option selected="" value="Open this select menu">Open this select menu</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="1">APEX 英雄</option>
+                      <option value="2">魔獸世界</option>
+                      <option value="3">BanG Dream！少女樂團派對</option>
+                      <option value="4">Candy Crash</option>
+                      <option value="5">Garena 傳說對決</option>
+                      <option value="6">LINE: Disney Tsum Tsum</option>
+                      <option value="7">Roblox 機器磚塊</option>
+                      <option value="8">原神</option>
+                      <option value="9">怪物彈珠</option>
+                      <option value="10">新楓之谷</option>
+                      <option value="11">特戰英豪</option>
+                      <option value="12">當個創世神</option>
+                      <option value="13">神魔之塔</option>
+                      <option value="14">第五人格</option>
+                      <option value="15">絕地求生</option>
+                      <option value="16">英雄聯盟</option>
+                      <option value="17">荒野亂鬥</option>
+                      <option value="18">跑跑卡丁車</option>
+                      <option value="19">雀魂麻將</option>
+                      <option value="20">風之國度</option>
+                      <option value="21">鬥陣特攻2</option>
                     </select>
-                    <div class="form-group"><label>GAME2</label><select class="custom-select">
-                        <option selected="" value="Open this select menu">Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <div class="form-group"><label>GAME2</label>
+                    <select class="custom-select" name="game2" id="game2">
+                      <option value="1">APEX 英雄</option>
+                      <option value="2">魔獸世界</option>
+                      <option value="3">BanG Dream！少女樂團派對</option>
+                      <option value="4">Candy Crash</option>
+                      <option value="5">Garena 傳說對決</option>
+                      <option value="6">LINE: Disney Tsum Tsum</option>
+                      <option value="7">Roblox 機器磚塊</option>
+                      <option value="8">原神</option>
+                      <option value="9">怪物彈珠</option>
+                      <option value="10">新楓之谷</option>
+                      <option value="11">特戰英豪</option>
+                      <option value="12">當個創世神</option>
+                      <option value="13">神魔之塔</option>
+                      <option value="14">第五人格</option>
+                      <option value="15">絕地求生</option>
+                      <option value="16">英雄聯盟</option>
+                      <option value="17">荒野亂鬥</option>
+                      <option value="18">跑跑卡丁車</option>
+                      <option value="19">雀魂麻將</option>
+                      <option value="20">風之國度</option>
+                      <option value="21">鬥陣特攻2</option>
                       </select>
-                      <div class="form-group"><label>GAME3</label><select class="custom-select">
-                          <option selected="" value="Open this select menu">Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                      <div class="form-group"><label>GAME3</label>
+                      <select class="custom-select" name="game3" id="game3">
+                      <option value="1">APEX 英雄</option>
+                      <option value="2">魔獸世界</option>
+                      <option value="3">BanG Dream！少女樂團派對</option>
+                      <option value="4">Candy Crash</option>
+                      <option value="5">Garena 傳說對決</option>
+                      <option value="6">LINE: Disney Tsum Tsum</option>
+                      <option value="7">Roblox 機器磚塊</option>
+                      <option value="8">原神</option>
+                      <option value="9">怪物彈珠</option>
+                      <option value="10">新楓之谷</option>
+                      <option value="11">特戰英豪</option>
+                      <option value="12">當個創世神</option>
+                      <option value="13">神魔之塔</option>
+                      <option value="14">第五人格</option>
+                      <option value="15">絕地求生</option>
+                      <option value="16">英雄聯盟</option>
+                      <option value="17">荒野亂鬥</option>
+                      <option value="18">跑跑卡丁車</option>
+                      <option value="19">雀魂麻將</option>
+                      <option value="20">風之國度</option>
+                      <option value="21">鬥陣特攻2</option>
                         </select>
                         <div class="row">
                           <div class="col-md-12">
@@ -103,8 +144,10 @@
                   </div>
                 </div>
             <div class="form-row">
-              <div class="form-group col-md-6"> <label for="form19">Password</label> <input type="password" class="form-control" id="playpwd" name="playpwd" placeholder="••••"> </div>
-              <div class="form-group col-md-6"> <label for="form20">Confirm Password</label> <input type="password" class="form-control" id="playpwd" name="playpwd" placeholder="••••"> </div>
+              <div class="form-group col-md-6"> <label for="form19">Password</label> 
+              <input type="password" class="form-control" id="playpwd" name="playpwd" placeholder="••••"> </div>
+              <div class="form-group col-md-6"> <label for="form20">Confirm Password</label> 
+              <input type="password" class="form-control" id="playpwd" name="playpwd" placeholder="••••"> </div>
             </div>
             <button type="submit" class="btn btn-primary btn-lg">確認送出</button>
           </form>
